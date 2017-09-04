@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cmd="python policyIteration.py ${@}"
+cmd="python mdpSolver.py ${@}"
 
 echo $cmd
 $cmd
