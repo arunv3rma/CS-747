@@ -70,7 +70,6 @@ try:
         while True:
             action = epsilon_greedy(Q_val[state], epsilon, numActions)
             next_state, reward, event = map(int, getResponse(actions[action]).strip().split())
-            # print(Q_val[next_state], np.argmax(Q_val[next_state]))
             best_action = np.argmax(Q_val[next_state])
             t_diff = reward + float(args.gamma) * Q_val[next_state][best_action] - Q_val[state][action]
             Q_val[state][action] += alpha * t_diff
