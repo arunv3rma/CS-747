@@ -1,0 +1,45 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[english]{babel}
+% \usepackage[]{geometry}
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+%\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage{float}
+%\usepackage{subfig}
+
+\title{\textbf{CS 747: Project Proposal} \\
+	\Large{\textbf{\textit{Algorithm for Adversarial Bandits with Dynamic Exploration and Exploitation Rate}}}}
+\author{\bf Group  Members: 154190002, 163190014, 163190026}
+
+% \date{\today}
+\date{}
+
+\hypersetup{
+	colorlinks   = true, %Colours links instead of ugly boxes
+	urlcolor     = blue, %Colour for external hyperlinks
+	linkcolor    = blue, %Colour of internal links
+	citecolor   = red %Colour of citations
+}
+
+\begin{document}
+	\maketitle
+	
+	\subsection*{Introduction}
+	In the course, we discussed algorithms like UCB~\cite{auer2002finite}, $\epsilon_t$-greedy~\cite{auer2002finite}, Thompson Sampling~\cite{kaufmann2012thompson} for stochastic multi-armed bandits. 
+	In this project, we will work on important variant of the multi-armed bandit problem where no stochastic assumption is made on the generation of rewards/losses. In the worst case of this setting, learning agent (algorithm) is playing against an adversarial environment (adversary). The adversary knows how the algorithm playing decisions and tries to change the actual outcome in order to penalize the algorithm. A good example for this is the game of chess, in which the players are adversarial environment to each other. The main goal of learning agent is to achieve sublinear regret bounds on the regret uniformly over all possible adversarial assignments of rewards. Due to adversarial nature, this problem setting is also known as {\it Adversarial Multi-Armed Bandits} problem. In this project, we will implement different algorithms (Exp3, Exp3.P \& Exp3-IX) which are designed to work in adversarial settings. These algorithms work with static exploration and exploitation rate so we are proposing a variant which uses dynamic exploration and exploitation rate like $\epsilon_t$-greedy~\cite{auer2002finite}.
+	
+	
+	\subsection*{Related Work: Algorithms for Adversarial Multi-Armed Bandits}
+	In Exp3 (Exponential weights for Exploration and Exploitation)~\cite{auer2002nonstochastic} algorithm, the learning agent chooses a decision-arm according to a probability distribution over arms. The learning agent then earns a reward through the drawn of arm, which then updates the probability distribution used to choose the arms as such the arm giving higher rewards will be played more in future. The Exp3 algorithm is not adequate for high probability bound on the regret but modified version of Exp3 that is Exp3.P~\cite{auer2002nonstochastic} (P stands for Probability) is used for this. Exp3.P algorithm tries to tone down the variance of regret achieved by increasing the exploration factor. One more variant of Exp3, Exp3-IX~\cite{neu2015explore} algorithm focuses on controlling the exploitation characteristic of the learning agent through something known as '$Implicit\ Exploration$'  (IX). In the Exp3-IX paper~\cite{neu2015explore}, author proves that Exp3-IX has lower regret bound than Exp3 and Exp3.P algorithm. 
+	
+	\subsection*{Scope of the Project}
+	This project is divided into two parts. First part, we will implement Exp3, Exp3.P and Exp3-IX algorithms and verify the claims of paper~\cite{neu2015explore}. All these algorithms have static exploration and exploitation parameter. Like $\epsilon_t$-greedy~\cite{auer2002finite}, in the second part, we will implement the variant of Exp3-IX with {\it Dynamic Exploration and Exploitation Rate} and compare the result against those with {\it static exploration and exploitation Rate}. If we achieve good experimental results, then we will try to give the theoretical regret bound for our algorithm.
+	
+	\bibliographystyle{amsplain}
+	\bibliography{ref}
+	
+\end{document}

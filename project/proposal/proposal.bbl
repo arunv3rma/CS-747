@@ -1,0 +1,30 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{auer2002finite}
+Peter Auer, Nicolo Cesa-Bianchi, and Paul Fischer, \emph{Finite-time analysis
+  of the multiarmed bandit problem}, Machine learning \textbf{47} (2002),
+  no.~2-3, 235--256.
+
+\bibitem{auer2002nonstochastic}
+Peter Auer, Nicolo Cesa-Bianchi, Yoav Freund, and Robert~E Schapire, \emph{The
+  nonstochastic multiarmed bandit problem}, SIAM journal on computing
+  \textbf{32} (2002), no.~1, 48--77.
+
+\bibitem{kaufmann2012thompson}
+Emilie Kaufmann, Nathaniel Korda, and R{\'e}mi Munos, \emph{Thompson sampling:
+  An asymptotically optimal finite-time analysis.}, ALT, vol.~12, Springer,
+  2012, pp.~199--213.
+
+\bibitem{neu2015explore}
+Gergely Neu, \emph{Explore no more: Improved high-probability regret bounds for
+  non-stochastic bandits}, Advances in Neural Information Processing Systems,
+  2015, pp.~3168--3176.
+
+\end{thebibliography}
